@@ -22,8 +22,8 @@ export default function WeatherForecast(props) {
   if (loaded) {
     return (
       <div className="WeatherForecast">
-        <div className="row">
-          <div className="col-4">
+        <div className="d-flex flex-row">
+          <div className="p-6">
             <div>Thurs</div>
             <div className="ForecastIcon">
               <img src={forecast.iconUrl} alt={forecast.condition} />

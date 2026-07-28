@@ -23,12 +23,12 @@ export default function WeatherForecast(props) {
     return (
       <div className="WeatherForecast">
         <div className="row">
-          <div className="col">
+          <div className="col-4">
             <div>Thurs</div>
             <div className="ForecastIcon">
               <img src={forecast.iconUrl} alt={forecast.condition} />
             </div>
-            <div>
+            <div className="ForecastTemps">
               <span className="ForecastMax">
                 {Math.round(forecast.maxTemp)}°
               </span>

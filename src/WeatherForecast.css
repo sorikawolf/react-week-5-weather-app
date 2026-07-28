@@ -1,6 +1,5 @@
 .WeatherForecast {
-  display: flex;
-  justify-content: center;
+  text-align: center;
 }
 
 .ForecastMin {
@@ -8,7 +7,14 @@
   margin-left: 5px;
 }
 
-.WeatherForecast img {
-  padding-bottom: 0;
-  margin-bottom: 0;
+.WeatherForecast .ForecastIcon {
+  display: block;
+  margin: 0 auto;
+  position: relative;
+  left: 45px;
+}
+
+.ForecastTemps {
+  position: relative;
+  top: -50px;
 }

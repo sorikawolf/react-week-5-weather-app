@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import axios from "axios";
 
+import WeatherForecastDay from "./WeatherForecastDay";
+
 import "./WeatherForecast.css";
 
 export default function WeatherForecast(props) {
@@ -9,14 +11,9 @@ export default function WeatherForecast(props) {
 
   function handleResponse(response) {
     console.log(response);
-    console.log(response.data.daily[0].temperature.maximum);
+    console.log(response.data.daily[0]);
     setLoaded(true);
-    setForecast({
-      maxTemp: response.data.daily[0].temperature.maximum,
-      minTemp: response.data.daily[0].temperature.minimum,
-      iconUrl: response.data.daily[0].condition.icon_url,
-      condition: response.data.daily[0].condition.desription,
-    });
+    setForecast(response.data.daily);
   }
 
   if (loaded) {
@@ -24,18 +21,7 @@ export default function WeatherForecast(props) {
       <div className="WeatherForecast">
         <div className="d-flex flex-row">
           <div className="p-6">
-            <div>Thurs</div>
-            <div className="ForecastIcon">
-              <img src={forecast.iconUrl} alt={forecast.condition} />
-            </div>
-            <div className="ForecastTemps">
-              <span className="ForecastMax">
-                {Math.round(forecast.maxTemp)}°
-              </span>
-              <span className="ForecastMin">
-                {Math.round(forecast.minTemp)}°
-              </span>
-            </div>
+            <WeatherForecastDay data={forecast[0]} />
           </div>
         </div>
       </div>

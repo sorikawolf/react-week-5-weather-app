@@ -19,8 +19,8 @@ export default function WeatherForecast(props) {
   if (loaded) {
     return (
       <div className="WeatherForecast">
-        <div className="d-flex flex-row">
-          <div className="p-6">
+        <div className="d-flex flex-row justify-content-sm-center">
+          <div className="daily p-0 m-0 gap-0">
             <WeatherForecastDay data={forecast[0]} />
           </div>
         </div>

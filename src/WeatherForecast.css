@@ -8,15 +8,18 @@
   width: 100px;
   height: 100px;
   display: block;
-  margin: 5px 0 5px 40px;
+  margin: 5px 5px 5px 20px;
 }
 
 .ForecastTemps {
   position: relative;
   bottom: 50px;
 }
-
 .ForecastMin {
   opacity: 0.6;
   margin-left: 5px;
+}
+
+.WeatherForecast .daily {
+  width: 100px;
 }

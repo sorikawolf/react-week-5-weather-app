@@ -19,10 +19,18 @@ export default function WeatherForecast(props) {
   if (loaded) {
     return (
       <div className="WeatherForecast">
-        <div className="d-flex flex-row justify-content-sm-center">
-          <div className="daily p-0 m-0 gap-0">
-            <WeatherForecastDay data={forecast[0]} />
-          </div>
+        <div className="d-flex flex-row justify-content-sm-around">
+          {forecast.map(function (dailyForecast, index) {
+            if (index < 6 && index >= 1) {
+              return (
+                <div className="daily" key={index}>
+                  <WeatherForecastDay data={dailyForecast} />
+                </div>
+              );
+            } else {
+              return null;
+            }
+          })}
         </div>
       </div>
     );
